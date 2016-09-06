@@ -1,4 +1,4 @@
-# BitSet [![Build Status](https://travis-ci.org/adagiolabs/bitset.svg?branch=master)](https://travis-ci.org/adagio/bitset)
+# BitSet [![Build Status](https://travis-ci.org/adagiolabs/bitset.svg?branch=master)](https://travis-ci.org/adagiolabs/bitset)
 
 Drop in replacement for bitset extension.
 
