@@ -4,7 +4,7 @@ namespace Adagio\Bitset\Test\Adapter;
 
 use Adagio\BitSet\Adapter\ArrayBitSet;
 
-class ArrayBitSetTest extends PHPUnit_Framework_TestCase
+class ArrayBitSetTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Performs a logical AND of target bit set with provided object
