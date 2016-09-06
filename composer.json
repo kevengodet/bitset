@@ -16,6 +16,9 @@
             "Adagio\\BitSet\\": "src"
         }
     },
+    "require": {
+        "php": "^5.5 || ^7.0"
+    },
     "autoload-dev": {
         "psr-4": {
             "Adagio\\BitSet\\Test\\": "tests"
