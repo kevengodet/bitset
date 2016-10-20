@@ -51,7 +51,7 @@ final class Factory
     {
         $class = self::findBestClass();
 
-        return $class::fromString($inputArray);
+        return $class::fromArray($inputArray);
     }
 
     /**
