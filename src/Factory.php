@@ -2,9 +2,9 @@
 
 namespace Adagio\BitSet;
 
-use Adagio\BitSet\NativeBitSet;
-use Adagio\BitSet\GmpBitSet;
-use Adagio\BitSet\ArrayBitSet;
+use Adagio\BitSet\Adapter\NativeBitSet;
+use Adagio\BitSet\Adapter\GmpBitSet;
+use Adagio\BitSet\Adapter\ArrayBitSet;
 
 final class Factory
 {
