@@ -128,12 +128,46 @@ class ArrayBitSet implements BitSet
     }
 
     /**
+     * Return a little endian hexadecimal representation of the bitset
+     *
+     * @return string
+     */
+    public function getHexValue()
+    {
+        $hex = '';
+        $numByte = 0;
+        $byte = 0;
+        asort($this->bits);
+        foreach ($this->bits as $bit) {
+            if ($bit > 8 * ($numByte + 1) - 1) {
+                $hex .= str_pad(dechex($byte), 2, '0', STR_PAD_LEFT);
+                
+                // Fill the gaps between the previous bit and $bit
+                $gap = max(0, floor($bit / 8) - $numByte - 1);
+                $hex .= str_repeat('00', $gap);
+                
+                $numByte += $gap + 1;
+                $byte = 0;
+            }
+            
+            $relativeBit = $bit - 8 * $numByte;
+            $byte |= (1 << $relativeBit);
+        }
+        
+        if ($byte) {
+            $hex .= str_pad(dechex($byte), 2, '0', STR_PAD_LEFT);
+        }
+        
+        return $hex;
+    }
+
+    /**
      *
      * @return string
      */
     public function getRawValue()
     {
-        return hex2bin(dechex(bindec((string) $this)));
+        return pack('H*', $this->getHexValue());
     }
 
     /**
